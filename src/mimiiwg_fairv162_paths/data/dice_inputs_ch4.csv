@@ -1,4 +1,4 @@
-﻿Source: MimiIWG/data/IWG_inputs/DICE/CH4N20emissions_annualversion.xls in CH4annual Tab Units of MtCH4,,,,,
+﻿Source: https://github.com/rffscghg/MimiIWG.jl/: MimiIWG/data/IWG_inputs/DICE/CH4N20emissions_annualversion.xls in CH4annual Tab Units of MtCH4,,,,,
 Year,IMAGE,MERGE,MESSAGE,MiniCAM,Scen5
 2005,354.7073,304.0534836,252.955,299.3965267,297.9773276
 2006,359.18986,307.5814182,255.086,302.2665386,300.2700542

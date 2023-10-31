@@ -1,4 +1,4 @@
-﻿Source: MimiIWG/data/IWG_inputs/DICE/SCC_input_EMFscenarios.xls in IndustrialCO2 tab Units of GtC per decade,,,,,
+﻿Source: https://github.com/rffscghg/MimiIWG.jl/: MimiIWG/data/IWG_inputs/DICE/SCC_input_EMFscenarios.xls in IndustrialCO2 tab Units of GtC per decade,,,,,
 Year,IMAGE,MERGE,MESSAGE,MiniCAM,Scen5
 2000,72.63919091,67.51048743,73.06363636,72.34353673,71.38921286
 2010,86.9685,86.01837406,79.5,86.76328886,84.69014073
