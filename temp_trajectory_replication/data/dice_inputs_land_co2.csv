@@ -1,4 +1,4 @@
-﻿Source: MimiIWG/data/IWG_inputs/DICE/SCC_input_EMFscenarios.xls in LandCO2 tab Units of GtC per decade,,,,,
+﻿Source: https://github.com/rffscghg/MimiIWG.jl/: MimiIWG/data/IWG_inputs/DICE/SCC_input_EMFscenarios.xls in LandCO2 tab Units of GtC per decade,,,,,
 Year,IMAGE,MERGE,MESSAGE,MiniCAM,Scen5
 2000,11.15280545,0,10.8,10.40800746,8.090203229
 2010,7.664320909,0,9.790909091,7.640684596,6.273978649

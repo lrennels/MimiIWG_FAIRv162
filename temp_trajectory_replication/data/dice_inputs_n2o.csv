@@ -1,4 +1,4 @@
-﻿Source: MimiIWG/data/IWG_inputs/DICE/CH4N20emissions_annualversion.xls in N2Oannual Tab Units of MtN2O,,,,,
+﻿Source: https://github.com/rffscghg/MimiIWG.jl/: MimiIWG/data/IWG_inputs/DICE/CH4N20emissions_annualversion.xls in N2Oannual Tab Units of MtN2O,,,,,
 Year,IMAGE,MERGE,MESSAGE,MiniCAM,Scen5
 2005,8.31844425,10.68164565,10.355,10.62285714,9.599612763
 2006,8.35541092,10.81091941,10.494,10.736,9.749305927

@@ -2,7 +2,7 @@
 
 julia_version = "1.9.3"
 manifest_format = "2.0"
-project_hash = "f73c8bcf94a8149bd8e908ac85d9638c69c32aff"
+project_hash = "e0930d8b121f229eb0558bb5aae49bb92df78c81"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -814,15 +814,19 @@ version = "1.0.0"
 
 [[deps.MimiFAIRv1_6_2]]
 deps = ["CSVFiles", "DataFrames", "Dates", "Distributions", "JSON", "Mimi"]
-git-tree-sha1 = "12a90f18554d02aa6529db0b19c21fb3801b730d"
+git-tree-sha1 = "e34d6bbca4b290a140f14d9a42f7bed218d16fd3"
+repo-rev = "add-hfcs"
+repo-url = "https://github.com/lrennels/MimiFAIRv1_6_2.jl"
 uuid = "02cc1f66-ff46-4bd7-a247-ac068822e639"
-version = "1.0.0"
+version = "1.0.1-DEV"
 
 [[deps.MimiGIVE]]
 deps = ["CSVFiles", "DataFrames", "Dates", "DelimitedFiles", "Distributions", "Interpolations", "JSON", "LinearAlgebra", "Mimi", "MimiBRICK", "MimiCIAM", "MimiFAIRv1_6_2", "MimiMooreEtAlAgricultureImpacts", "MimiRFFSPs", "MimiSSPs", "Mimi_NAS_pH", "NetCDF", "PDMats", "Query", "Random", "StatsBase", "XLSX"]
-git-tree-sha1 = "05a0e66554ab4a58ec0583be365675d1a1fe1d05"
+git-tree-sha1 = "513b98e56079c8c00c9192193d81fc81bd8360d4"
+repo-rev = "main"
+repo-url = "https://github.com/lrennels/MimiGIVE.jl"
 uuid = "08b927d4-7a58-4cf8-85d0-bad32a16dfbc"
-version = "1.0.0"
+version = "1.0.1-DEV"
 
 [[deps.MimiMooreEtAlAgricultureImpacts]]
 deps = ["CSVFiles", "DataFrames", "DelimitedFiles", "Distributions", "Interpolations", "Mimi"]

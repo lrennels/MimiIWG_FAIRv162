@@ -1,28 +1,39 @@
 # MimiIWG_FAIRv162
 
-This is a work-in-progress version of MimiIWG modified to be coupled to FAIR v1.6.2. It is used in part for sensitivity analysis in Tan, Rennels, and Parthum (2023), "The Social Costs of Hydrofluorocarbons and the Benefits from Their Expedited Phasedown" which contains further descriptions of modeling choices.
+This is a work-in-progress of the [MimiIWG model](https://github.com/rffscghg/MimiIWG.jl) modified to be coupled to the [FAIR v1.6.2 climate model](https://github.com/FrankErrickson/MimiFAIRv1_6_2.jl) for use in **sensitivity analysis** of Tan, Rennels, and Parthum (2023) "The Social Costs of Hydrofluorocarbons and the Benefits from Their Expedited Phasedown".
 
-The boilerplate code and input files are available in the following two repositories:
+The boilerplate code and input files are available in the following two repositories, and more information on methods and assumptions should be found in the afforementioned publication.
 
 - [MimiFAIRv1_6_2](https://github.com/FrankErrickson/MimiFAIRv1_6_2.jl)
 - [MimiIWG](https://github.com/rffscghg/MimiIWG.jl)
 
 ## Temperature Trajectories
 
-In order to run `MimiIWG` with `FAIR v1.6.2` we first preprocess the exogenous temperature trajectories to be loaded for each run. These files are saved in `src/fairv162_paths/output` with one file per gas-socioeconomic combination. For each of 2237 FAIR parameter sets we have a baseline run and a pulse run for each of the pulse years. The underlying emissions for each run are using the FAIR v1.6.2 background emissions settings and then forcing CO2, N2O, and CH4 with emf sceanrios from 2005 to 2300.
-
-These trajectories serve as inputs to the `FAIR_T_exog` component Parameters:
+In order to run `MimiIWG` with `FAIR v1.6.2` we must exogenously load temperature trajectories in the `FAIR_T_exog` component, setting two Parameters:
 
 ```
 T_base = Parameter(index=[time, fair_samples, scenarios])
 T_pulse = Parameter(index=[time, fair_samples, pulse_years, scenarios])
 ```
 
-### Replication Code
+We host these data inputs on `Zenodo.com` and download them automatically (~12 GB) to your machine upon running this package, as indicated by the following `__init__()` function specification from `MimiIWG_FAIRv162.jl`.
 
-The subfolder `src/fairv162_paths` contains all scripts and data used to compute the FAIR v1.6.2 temperature trajectories resulting from using FAIR v1.6.2 background emissions settings, forcing CO2, N2O, and CH4 with emf scenarios from 2005 to 2300, and adding a pulse of 1 GtC for CO2 and 1 Mt for any given HFC. Running `src/core/fairv162/src/main.jl` will produce the input files necessary for computing the SC-HFCs with this model. This only needs to be done _once_ locally and these can then be reused, the output `.arrow` files will be output to the `src/fairv162_paths/output` folder.  **NOTE** this should not be necessary for the average user, we use the `DataDeps` package to load our pre-calculated outputs into this folder but retain replication code for completeness.
+```
+function __init__()
+    register(DataDep(
+        "mimiiwg_fairv162_temp_trajectories",
+        "MimiIWG FAIRv162 Temperature Trajectories",
+        "https://zenodo.org/records/10056703/files/mimiiwg_fairv162_temp_trajectories.zip",
+        "35f48fd461198fed6ae06434fae1c6beb6b237b5d4c1f2abb6b9cc811502ce92",
+        post_fetch_method=unpack
+    ))
+end
+```
+    Rennels, L., Parthum, B., & Tan, T. (2023). MimiIWG FAIRv162 Temperature Trajectories (v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.10056703
+
+Please see the `Zenodo.com` dataset [here](https://doi.org/10.5281/zenodo.10056703) for further data specifications and information.  We also include full replication code for generating these inputs in the Zenodo dataset, as well as in this repository in `temp_trajectory_replication`. To run this code locally, run `temp_trajectory_replication/main.jl` and the outputs which duplicate those from `Zenodo.com` will be produced in the `temp_trajectory_replication/output` folder.
 
 ## Other Notes
 
 - The `get_model` function now requires `gas` as an argument, as needed by the model to load the correct "pulse" temperature trajectories.
-- See the Methods section of Tan, Rennels, and Parthum 2023 for details on modeling constraints around the estimation methodology assumptions and consequences.
+- It is important to check the Methods section of Tan, Rennels, and Parthum 2023 for details on modeling constraints around the estimation methodology assumptions, and note that the work thus far was done with a focus on HFCs though could be further improved to explore other gases.
