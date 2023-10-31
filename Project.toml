@@ -3,6 +3,7 @@ uuid = "4ed45b26-778f-11ee-1a7e-43a2532b2fa8"
 version = "0.1.0-DEV"
 
 [deps]
+Arrow = "69666777-d1a9-59fb-9406-91d4454c9d45"
 CSVFiles = "5d742f6a-9f54-50ce-8119-2520741973ca"
 DataDeps = "124859b0-ceae-595e-8997-d05f6a7a8dfe"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"

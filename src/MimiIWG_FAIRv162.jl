@@ -54,8 +54,8 @@ function __init__()
         register(DataDep(
                 "mimiiwg_fairv162_temp_trajectories",
                 "MimiIWG FAIRv162 Temperature Trajectories",
-                "35f48fd461198fed6ae06434fae1c6beb6b237b5d4c1f2abb6b9cc811502ce92",
                 "https://zenodo.org/records/10056703/files/mimiiwg_fairv162_temp_trajectories.zip",
+                "35f48fd461198fed6ae06434fae1c6beb6b237b5d4c1f2abb6b9cc811502ce92",
                 post_fetch_method=unpack
             ))
 end
