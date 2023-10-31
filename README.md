@@ -1,6 +1,6 @@
 # MimiIWG_FAIRv162
 
-This is a work-in-progress of the [MimiIWG model](https://github.com/rffscghg/MimiIWG.jl) modified to be coupled to the [FAIR v1.6.2 climate model](https://github.com/FrankErrickson/MimiFAIRv1_6_2.jl) for use in sensitivity analysis of Tan, Rennels, and Parthum (2023) "The Social Costs of Hydrofluorocarbons and the Benefits from Their Expedited Phasedown".
+This is a work-in-progress of the [MimiIWG model](https://github.com/rffscghg/MimiIWG.jl) modified to be coupled to the [FAIR v1.6.2 climate model](https://github.com/FrankErrickson/MimiFAIRv1_6_2.jl) for use in **sensitivity analysis** of Tan, Rennels, and Parthum (2023) "The Social Costs of Hydrofluorocarbons and the Benefits from Their Expedited Phasedown".
 
 The boilerplate code and input files are available in the following two repositories, and more information on methods and assumptions should be found in the afforementioned publication.
 
@@ -21,16 +21,16 @@ We host these data inputs on `Zenodo.com` and download them automatically (~12 G
 ```
 function __init__()
     register(DataDep(
-        "mimiiwg_fairv162_paths",
-        "MimiIWG FAIRv162 Temperature Paths",
-        "https://zenodo.org/record/TODO",
-        "TODO",
+        "mimiiwg_fairv162_temp_trajectories",
+        "MimiIWG FAIRv162 Temperature Trajectories",
+        "https://zenodo.org/records/10056703/files/mimiiwg_fairv162_temp_trajectories.zip",
         post_fetch_method=unpack
     ))
 end
 ```
+    Rennels, L., Parthum, B., & Tan, T. (2023). MimiIWG FAIRv162 Temperature Trajectories (v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.10056703
 
-Please see the `Zenodo.com` dataset [here]() for further data specifications and information.  We also include full replication code for generating these inputs in the Zenodo dataset, as well as here in this repository in `src/mimiiwg_fair162/paths`. To run this code locally, run `mimiiwg_fairv162_paths/main.jl` and the outputs which duplicate those from `Zenodo.com` will be produced in the `mimiiwg_fairv162_paths/output` folder.
+Please see the `Zenodo.com` dataset [here](https://doi.org/10.5281/zenodo.10056703) for further data specifications and information.  We also include full replication code for generating these inputs in the Zenodo dataset, as well as in this repository in `temp_trajectory_replication`. To run this code locally, run `temp_trajectory_replication/main.jl` and the outputs which duplicate those from `Zenodo.com` will be produced in the `temp_trajectory_replication/output` folder.
 
 ## Other Notes
 

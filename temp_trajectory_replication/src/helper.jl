@@ -1,4 +1,4 @@
-using DataFrames, CSVFiles, Query, VegaLite, Interpolations, Mimi
+using DataFrames, CSVFiles, Query, Interpolations, Mimi
 
 function get_emf_fair(emf_scenario::Symbol, datadir::String)
 

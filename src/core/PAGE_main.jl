@@ -90,14 +90,14 @@ function get_page_model(scenario_choice::Union{scenario_choice, Nothing}=nothing
     n_scenarios = length(scenarios)
     n_pulse_years = length(_all_pulse_years)
 
-    T_key = Arrow.Table(joinpath(datadep"mimiiwg_fairv162_paths", "temperature_T_KEY.arrow")) |> DataFrame;
+    T_key = Arrow.Table(joinpath(datadep"mimiiwg_fairv162_temp_trajectories", "temperature_T_KEY.arrow")) |> DataFrame;
     T_base = Array{Float64}(undef, n_page_years, _n_fair_samples, n_scenarios);
     T_pulse = Array{Float64}(undef, n_page_years, _n_fair_samples, n_pulse_years, n_scenarios);
 
     for scenario in scenarios
 
         # load the temperature path
-        T = Arrow.Table(joinpath(datadep"mimiiwg_fairv162_paths", "T_$(gas)_$(emf_scenarios[Int(scenario)]).arrow")) |> DataFrame
+        T = Arrow.Table(joinpath(datadep"mimiiwg_fairv162_temp_trajectories", "T_$(gas)_$(emf_scenarios[Int(scenario)]).arrow")) |> DataFrame
         T = hcat(T_key, T) |> @filter(_.time in page_years) |> DataFrame
 
         # Set BASE temperature trajectories
