@@ -29,9 +29,10 @@ function __init__()
     ))
 end
 ```
-    Rennels, L., Parthum, B., & Tan, T. (2023). MimiIWG FAIRv162 Temperature Trajectories (v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.10056703
 
 Please see the `Zenodo.com` dataset [here](https://doi.org/10.5281/zenodo.10056703) for further data specifications and information.  We also include full replication code for generating these inputs in the Zenodo dataset, as well as in this repository in `temp_trajectory_replication`. To run this code locally, run `temp_trajectory_replication/main.jl` and the outputs which duplicate those from `Zenodo.com` will be produced in the `temp_trajectory_replication/output` folder.
+
+Dataset Citation: Rennels, L., Parthum, B., & Tan, T. (2023). MimiIWG FAIRv162 Temperature Trajectories (v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.10056703
 
 ## Other Notes
 
